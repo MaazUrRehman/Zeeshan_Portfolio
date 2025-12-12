@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from '@/components/ui/Footer';
 import Header from '@/components/ui/header';
 import React, { useState } from 'react';
 
@@ -23,22 +24,22 @@ const ContactForm = () => {
         setError("");
 
         try {
-        const res = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-        const data = await res.json();
-        if (res.ok) {
-            setIsSubmitted(true);
-            setFormData({ name: "", email: "", subject: "", message: "" });
-            setTimeout(() => setIsSubmitted(false), 3000);
-        } else {
-            setError(data.error || "Something went wrong");
-        }
+            const data = await res.json();
+            if (res.ok) {
+                setIsSubmitted(true);
+                setFormData({ name: "", email: "", subject: "", message: "" });
+                setTimeout(() => setIsSubmitted(false), 3000);
+            } else {
+                setError(data.error || "Something went wrong");
+            }
         } catch (err: any) {
-        setError(err.message || "Something went wrong");
+            setError(err.message || "Something went wrong");
         }
     };
 
@@ -46,7 +47,7 @@ const ContactForm = () => {
         <>
             <Header />
 
-            <section className="py-20 px-6 bg-gradient-to-br from-amber-50 to-amber-100/30 dark:from-gray-900 dark:to-amber-900/10">
+            <section className="pt-10 px-6 bg-gradient-to-br from-amber-50 to-amber-100/30 dark:from-gray-900 dark:to-amber-900/10">
                 <div className="max-w-4xl mx-auto">
                     {/* Section Header */}
                     <div className="text-center mb-16">
@@ -242,7 +243,11 @@ const ContactForm = () => {
                         </div>
                     </div>
                 </div>
+                <div className="relative w-full max-w-6xl px-8 py-4 z-10">
+                    <Footer />
+                </div>
             </section>
+                
         </>
     );
 };

@@ -4,14 +4,15 @@ import HeroSection from "../components/ui/HeraSection";
 import EducationSection from "@/components/ui/EducationComponent";
 import SkillsSection from "@/components/ui/SkillsComponent";
 import ExperienceSection from "@/components/ui/ExperienceComponent";
+import Footer from "@/components/ui/Footer";
 
 
 export default function Home() {
   const education = [
-    { degree: "Bachelor in Commerce", institution: "Dhigmat Govt. College & P. G Center Hyderabad", period: "2016-2018" },
-    { degree: "Diploma in Civil", institution: "Hasoni Collegiate Guilberg F. D Area Karachi", period: "2013-2018" },
+    { degree: "Bachelor in Commerce", institution: "Ghazali Govt. College & P.G Center Hyderabad", period: "2016-2018" },
+    { degree: "Diploma in Civil", institution: "Hasani Collegiate Gulberg F.B Area Karachi", period: "2013-2018" },
     { degree: "Intermediate", institution: "Pakistan Shipowner's Govt. College Nazimabad Karachi", period: "2011-2013" },
-    { degree: "Matriculation", institution: "MJD GRAMMAR SCHOOL North Karachi", period: "2009-2011" }
+    { degree: "Matriculation", institution: "M.D Grammar School North Karachi", period: "2009-2011" }
   ];
 
 
@@ -49,7 +50,7 @@ export default function Home() {
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-amber-300/10 rounded-full blur-3xl"></div>
         </div>
 
-        <main className="relative w-full max-w-6xl px-8 py-12 z-10">
+        <main className="relative w-full max-w-6xl px-8 py-4 z-10">
           <HeroSection />
           {/*stats section*/}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-36 mb-20 w-full ">
@@ -63,52 +64,16 @@ export default function Home() {
             ))}
           </div>
 
-
           {/* Education & Skills Section */}
           <EducationSection education={education} />
 
           {/* Skills Section */}
           <SkillsSection />
 
-
           {/* Experience Section */}
           <ExperienceSection />
-
           
-
-          {/* Enhanced Footer */}
-          <div className="w-full border-t border-amber-200/50 dark:border-amber-700/30 pt-8">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-              <div className="text-center lg:text-left">
-                <div className="flex items-center gap-2 mb-2 justify-center lg:justify-start">
-                  <div className="w-6 h-6 bg-gradient-to-br from-amber-600 to-amber-800 rounded"></div>
-                  <span className="text-lg font-bold text-black dark:text-amber-50">Syed Zeeshan Uddin</span>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-amber-200/60">
-                  Architectural Draftsman & CAD Specialist
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 items-center">
-                <div className="flex gap-4">
-                  {['Portfolio', 'LinkedIn', 'Contact'].map((item) => (
-                    <a
-                      key={item}
-                      href="#"
-                      className="text-gray-600 dark:text-amber-200/60 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-300 font-medium text-sm"
-                    >
-                      {item}
-                    </a>
-                  ))}
-                </div>
-                <div className="text-xs text-gray-500 dark:text-amber-200/40 text-center">
-                  &copy; 2024 Syed Zeeshan Uddin
-                </div>
-              </div>
-            </div>
-          </div>
-
-
+          <Footer />
 
         </main>
       </div>

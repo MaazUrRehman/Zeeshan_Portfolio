@@ -21,17 +21,17 @@ const ExperienceSection = () => {
       period: "2014-2018"
     },
     {
-      company: "Monu-U-Zaman Architects",
+      company: "Moin-U-Zaman Architects",
       location: "Karachi Pakistan (Part Time)",
       period: "2013-2014"
     },
     {
-      company: "Habib Fida All Architects",
+      company: "Habib Fida Ali Architects",
       location: "Karachi Pakistan",
       period: "2011-2014"
     },
     {
-      company: "Nainsoro-U-Zaman Architects",
+      company: "Mansoor-U-Zaman Architects",
       location: "Karachi Pakistan",
       period: "2009-2011"
     }

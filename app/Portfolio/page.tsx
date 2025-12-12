@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Header from '@/components/ui/header';
+import Footer from '@/components/ui/Footer';
 
 // Image data categorized as per your requirements
 const portfolioImages = [
@@ -54,7 +55,7 @@ const Portfolio = () => {
             <Header />
             <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100/30 dark:from-gray-900 dark:to-amber-900/10">
                 {/* Hero Section */}
-                <section className="relative py-20 px-6">
+                <section className="relative py-20 px-24">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="w-12 h-1 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full"></div>
@@ -193,7 +194,12 @@ const Portfolio = () => {
                         </div>
                     </div>
                 )}
+
+                <div className="relative w-full max-w-6xl px-8 py-4 z-10">
+                    <Footer />
+                </div>
             </div>
+
         </>
     );
 };
