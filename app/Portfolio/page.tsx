@@ -13,13 +13,13 @@ const portfolioImages = [
     { id: 3, name: "pic_3.png", src: "/images/portfolio/pic_3.png", category: "commercial" },
     { id: 20, name: "Picture2.jpg", src: "/images/portfolio/Picture2.jpg", category: "commercial" },
     { id: 21, name: "Picture3.jpg", src: "/images/portfolio/Picture3.jpg", category: "commercial" },
-    
+
     // Amenities Category
     { id: 4, name: "pic_4.png", src: "/images/portfolio/pic_4.png", category: "amenities" },
     { id: 6, name: "pic_6.png", src: "/images/portfolio/pic_6.png", category: "amenities" },
     { id: 5, name: "pic_5.png", src: "/images/portfolio/pic_5.png", category: "amenities" },
     { id: 7, name: "pic_7.png", src: "/images/portfolio/pic_7.png", category: "amenities" },
-    
+
     // Interior Design Category
     { id: 8, name: "pic_8.png", src: "/images/portfolio/pic_8.png", category: "interior" },
     { id: 9, name: "pic_9.png", src: "/images/portfolio/pic_9.png", category: "interior" },
@@ -46,8 +46,8 @@ const Portfolio = () => {
     const [selectedImage, setSelectedImage] = useState<any>(null);
     const [activeCategory, setActiveCategory] = useState("all");
 
-    const filteredImages = activeCategory === "all" 
-        ? portfolioImages 
+    const filteredImages = activeCategory === "all"
+        ? portfolioImages
         : portfolioImages.filter(image => image.category === activeCategory);
 
     return (
@@ -57,7 +57,7 @@ const Portfolio = () => {
                 {/* Hero Section */}
                 <section className="relative py-20 px-24">
                     <div className="max-w-7xl mx-auto">
-                        <div className="flex items-center gap-4 mb-8">
+                        <div className="flex items-center mb-8">
                             <div className="w-12 h-1 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full"></div>
                             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
                                 Portfolio Gallery
@@ -73,11 +73,10 @@ const Portfolio = () => {
                                 <button
                                     key={category.id}
                                     onClick={() => setActiveCategory(category.id)}
-                                    className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                                        activeCategory === category.id
+                                    className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${activeCategory === category.id
                                             ? "bg-amber-600 text-amber-50 shadow-lg transform scale-105"
                                             : "bg-white/70 dark:bg-gray-800 text-amber-700 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-amber-900/30 border border-amber-200 dark:border-amber-700/30"
-                                    }`}
+                                        }`}
                                 >
                                     {category.label}
                                 </button>
@@ -157,45 +156,55 @@ const Portfolio = () => {
                 </section>
 
                 {/* Image Modal - 50% of screen */}
+                {/* Image Modal - Responsive for mobile */}
                 {selectedImage && (
-                    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl w-1/2 max-h-[80vh] overflow-hidden">
+                    <div
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <div
+                            className="bg-white dark:bg-gray-800 rounded-2xl w-full max-w-3xl mx-auto overflow-hidden shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             {/* Modal Header */}
-                            <div className="flex justify-between items-center p-4 border-b border-amber-200 dark:border-amber-700/30">
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                                        {selectedImage.name}
-                                    </h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
-                                        {selectedImage.category} • {
-                                            categories.find(cat => cat.id === selectedImage.category)?.label
-                                        }
-                                    </p>
-                                </div>
+                            <div className="flex justify-between items-center p-4 border-b border-amber-200 dark:border-amber-700/30 bg-white/95 dark:bg-gray-800/95">
+                                
                                 <button
                                     onClick={() => setSelectedImage(null)}
-                                    className="p-2 hover:bg-amber-100 dark:hover:bg-amber-900/30 rounded-full transition-colors"
+                                    className="ml-4 p-2 flex justify-right hover:bg-amber-100 dark:hover:bg-amber-900/30 rounded-full transition-colors"
+                                    aria-label="Close modal"
                                 >
-                                    <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-6 h-6 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </button>
                             </div>
 
-                            {/* Modal Image */}
-                            <div className="relative w-full h-[60vh]">
+                            {/* Modal Image - Responsive */}
+                            <div className="relative w-full h-[30vh] sm:h-[50vh] md:h-[60vh]">
                                 <Image
                                     src={selectedImage.src}
                                     alt={selectedImage.name}
                                     fill
                                     className="object-contain"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 70vw"
+                                    priority
                                 />
+                            </div>
+
+                            {/* Modal Footer */}
+                            <div className="p-4 border-t border-amber-200 dark:border-amber-700/30 bg-white/95 dark:bg-gray-800/95">
+                                <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+                                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                                        {selectedImage.category.toUpperCase()} • ARCHITECTURAL DRAFTING
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 )}
 
-                <div className="relative w-full max-w-6xl px-8 py-4 z-10">
+                <div className="w-[80%] mx-auto">
                     <Footer />
                 </div>
             </div>

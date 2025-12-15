@@ -13,7 +13,7 @@ const ExperienceSection = () => {
     {
       company: "Bahria Town Karachi",
       location: "Super Highway Karachi",
-      period: "2018-2019"
+      period: "2018-2025"
     },
     {
       company: "3DSI-Pakistan-LIC",

@@ -85,7 +85,7 @@ const ContactForm = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h4>
-                                        <p className="text-gray-600 dark:text-gray-300">+92 123 456 7890</p>
+                                        <p className="text-gray-600 dark:text-gray-300">+966 538 995 203</p>
                                     </div>
                                 </div>
 
@@ -97,7 +97,7 @@ const ContactForm = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h4>
-                                        <p className="text-gray-600 dark:text-gray-300">contact@architect.com</p>
+                                        <p className="text-gray-600 dark:text-gray-300">syedzeeshan870870@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -110,7 +110,7 @@ const ContactForm = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Location</h4>
-                                        <p className="text-gray-600 dark:text-gray-300">Karachi, Pakistan</p>
+                                        <p className="text-gray-600 dark:text-gray-300">Jeddah, Kingdom of Saudia Arabia</p>
                                     </div>
                                 </div>
                             </div>
@@ -243,11 +243,11 @@ const ContactForm = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative w-full max-w-6xl px-8 py-4 z-10">
+                <div className="w-[80%] mx-auto">
                     <Footer />
                 </div>
             </section>
-                
+
         </>
     );
 };
