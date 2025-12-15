@@ -53,9 +53,9 @@ const Portfolio = () => {
     return (
         <>
             <Header />
-            <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100/30 dark:from-gray-900 dark:to-amber-900/10">
+            <div className="min-h-screen  bg-gradient-to-br from-amber-50 to-amber-100/30 dark:from-gray-900 dark:to-amber-900/10">
                 {/* Hero Section */}
-                <section className="relative py-20 px-24">
+                <section className="relative py-10 px-10">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex items-center mb-8">
                             <div className="w-12 h-1 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full"></div>
