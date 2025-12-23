@@ -69,12 +69,6 @@ Sent from zeeshan-portfolio-omega.vercel.app
               ${body.message.replace(/\n/g, '<br>')}
             </div>
           </div>
-
-          <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-          <p style="color: #666; font-size: 14px;">
-            📧 Sent from <strong>Zeeshan's Portfolio</strong><br>
-            <a href="https://zeeshan-portfolio-omega.vercel.app/contact">View Contact Form</a>
-          </p>
         </div>
       `,
     });
