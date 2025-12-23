@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     // Use actual form data instead of hardcoded test content
     await transporter.sendMail({
       from: `"Portfolio Contact Form" <${process.env.SMTP_USER}>`,
-      to: "maazurrehman468@gmail.com",
+      to: "syedzeeshan870870gmail.com",
       replyTo: body.email, // Reply directly to sender
       subject: `New Contact Form: ${body.subject}`,
       text: `
@@ -64,10 +64,7 @@ Sent from zeeshan-portfolio-omega.vercel.app
             <p><strong>Name:</strong> ${body.name}</p>
             <p><strong>Email:</strong> <a href="mailto:${body.email}">${body.email}</a></p>
             <p><strong>Subject:</strong> ${body.subject}</p>
-            <p><strong>Message:</strong></p>
-            <div style="background: white; padding: 15px; border-left: 4px solid #f39c12; margin: 10px 0;">
-              ${body.message.replace(/\n/g, '<br>')}
-            </div>
+            <p><strong>Message:</strong> ${body.message} </p>
           </div>
         </div>
       `,
