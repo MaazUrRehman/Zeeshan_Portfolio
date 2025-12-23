@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     // Use actual form data instead of hardcoded test content
     await transporter.sendMail({
       from: `"Portfolio Contact Form" <${process.env.SMTP_USER}>`,
-      to: "syedzeeshan870870gmail.com",
+      to: "syedzeeshan870870@gmail.com",
       replyTo: body.email, // Reply directly to sender
       subject: `New Contact Form: ${body.subject}`,
       text: `
