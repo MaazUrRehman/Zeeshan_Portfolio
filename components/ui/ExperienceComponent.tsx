@@ -21,7 +21,7 @@ const ExperienceSection = () => {
       period: "2014-2018"
     },
     {
-      company: "Moin-U-Zaman Architects",
+      company: "Moin-Uz-Zaman Architects",
       location: "Karachi Pakistan (Part Time)",
       period: "2013-2014"
     },
@@ -31,7 +31,7 @@ const ExperienceSection = () => {
       period: "2011-2014"
     },
     {
-      company: "Mansoor-U-Zaman Architects",
+      company: "Mansoor-Uz-Zaman Architects",
       location: "Karachi Pakistan",
       period: "2009-2011"
     }
