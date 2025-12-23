@@ -50,7 +50,6 @@ New Contact Form Submission
 
 Name: ${body.name}
 Email: ${body.email}
-Phone: ${body.phone || 'Not provided'}
 Subject: ${body.subject}
 Message: ${body.message}
 
