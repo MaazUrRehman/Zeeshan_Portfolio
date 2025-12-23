@@ -25,6 +25,7 @@ export async function POST(request: Request) {
       pass: process.env.SMTP_PASS ? "EXISTS" : "MISSING",
     });
 
+    // ✅ FIXED: createTransport (not createTransporter)
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 587,
